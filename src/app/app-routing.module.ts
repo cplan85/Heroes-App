@@ -5,6 +5,11 @@ import { RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'auth',
+    //THIS IS WHERE YOU CAN LAZY LOAD THE MODULE IN THE SEPARATE MODULE FOLDER
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
+  },
+  {
     path: '404',
     component: ErrorPageComponent
   },
