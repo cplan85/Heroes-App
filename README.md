@@ -8,6 +8,9 @@ In this project I learned how to <b>lazy load modules</b> by modifying the main 
 
 I learned how to incorporate various Angular Material components such as Sidenav and Autocomplete.
 
+JSON-Server:
+I learned how to incorporate interface with a simple backend with [Json Server](https://www.npmjs.com/package/json-server). In this backend with a predefined JSON there are two collections: Users and Heroes.
+
 ---
 
 ## Development server
