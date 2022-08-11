@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## :mortar_board: **What did I learn from this project**
 
-In this project I learned how to lazy load modules by modifying the main App router and creating a folder structure where each section contains its own Module to be exported. For example, there is an Authorization section, that contains a Login and Register page. Once a user go to a link of "auth/" this will load that module containing both pages.
+In this project I learned how to <b>lazy load modules</b> by modifying the main App router and creating a folder structure where each section contains its own Module to be exported. For example, there is an Authorization section, that contains a Login and Register page. Once a user go to a link of "auth/" this will load that module containing both pages.
+
+I learned how to incorporate various Angular Material components such as Sidenav and Autocomplete.
 
 ---
 
