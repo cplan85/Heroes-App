@@ -17,6 +17,12 @@ Instead of using Angular Material's Grid List, I learned to implement [Angular-F
 Image Pipe:
 I created an image handling pipe, that takes a whole object as an argument, and then returns an image url if it finds it or an alternate image if it is not found.
 
+Switchmap:
+I utilized [Switchmap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap) to first gather the route parameter of id within the Heroe component, and then use that id to make an http call to the mock Json-Server. 
+
+Environment Variables:
+Instead of writing out a full string for the http call, the localhost is indicated in the environment, while a product variable is to be included for production.
+
 ---
 
 ## Development server
