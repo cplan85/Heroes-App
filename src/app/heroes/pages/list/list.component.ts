@@ -18,6 +18,7 @@ export class ListComponent implements OnInit {
 
     this.heroesService.getHeroes().subscribe(resp => {
       this.heroes = resp;
+      console.log(resp)
     })
   }
 

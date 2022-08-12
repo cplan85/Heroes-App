@@ -8,11 +8,15 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class HeroeCardComponent implements OnInit {
 
+  heroId: string;
+
   constructor() { }
 
   @Input() heroe: Heroe;
 
   ngOnInit(): void {
+
+    
   }
 
 }

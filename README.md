@@ -14,6 +14,9 @@ I learned how to incorporate interface with a simple backend with [Json Server](
 Angular-Flex-Layout:
 Instead of using Angular Material's Grid List, I learned to implement [Angular-Flex-Layout](https://www.npmjs.com/package/@angular/flex-layout) to create the centered columns for the Heroe cards.
 
+Image Pipe:
+I created an image handling pipe, that takes a whole object as an argument, and then returns an image url if it finds it or an alternate image if it is not found.
+
 ---
 
 ## Development server
