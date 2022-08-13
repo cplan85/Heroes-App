@@ -22,17 +22,21 @@
               <mat-option *ngFor="let hero of heroes" [value]="hero">
                 {{hero.superhero}}
               </mat-option>
+
+              <!-- <mat-option value="" *ngIf="heroes && heroes.length >0 && term.length >0">
+                Could not find anything matching the term {{term}}
+              </mat-option> -->
             </mat-autocomplete>
           </mat-form-field>
     </div>
 
-    <div *ngIf="heroes && heroes.length>0; else elseBlock">
+    <div *ngIf="heroes && heroes.length ===0 && term.length >0; else elseBlock">
         <pre>
-            {{selectedHero | json}}
+          No Hero matching that string found.
         </pre>
     </div>
 
-    <ng-template #elseBlock>No Hero matching that string found.</ng-template>
+    <ng-template #elseBlock>{{selectedHero | json}}</ng-template>
 
 </div>
 

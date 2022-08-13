@@ -12,7 +12,7 @@ export class FindComponent implements OnInit {
 
   term:string;
   heroes: Heroe[];
-  selectedHero: Heroe;
+  selectedHero: Heroe | undefined;
 
   constructor(private heroesService: HeroesService) { }
 
@@ -28,6 +28,10 @@ export class FindComponent implements OnInit {
   optionSelected(event: MatAutocompleteSelectedEvent) {
     console.log(event)
 
+    if(!event.option.value) {
+      this.selectedHero = undefined;
+      return;
+    }
     const hero: Heroe = event.option.value;
 
     this.term = hero.superhero;

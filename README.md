@@ -23,6 +23,8 @@ I utilized [Switchmap](https://www.learnrxjs.io/learn-rxjs/operators/transformat
 Environment Variables:
 Instead of writing out a full string for the http call, the localhost is indicated in the environment, while a product variable is to be included for production.
 
+
+
 ---
 
 ## Development server
