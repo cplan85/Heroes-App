@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Heroe } from '../../interfaces/heroes.interface';
 import { Publisher } from '../../interfaces/heroes.interface';
 import { switchMap } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add',
@@ -34,7 +35,8 @@ export class AddComponent implements OnInit {
 
   constructor(private heroeService: HeroesService,
     private activatedRoute: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private snackBar:MatSnackBar ) { }
 
   ngOnInit(): void {
 
@@ -58,13 +60,15 @@ export class AddComponent implements OnInit {
    
     if(this.hero.id) {
       this.heroeService.editHeroe(this.hero, this.hero.id).subscribe(resp=> {
-        console.log('Updated',resp)
+       this.showSnackBar("Hero updated.")
+
       })
     } else {
 
        this.heroeService.addHeroe(this.hero).subscribe(hero => {
          console.log('Response', hero)
          this.router.navigate(['/heroes/edit', hero.id])
+         this.showSnackBar("Hero added.")
        })
 
     }
@@ -75,7 +79,7 @@ export class AddComponent implements OnInit {
   deleteHero():void {
 
     this.activatedRoute.params
-    .pipe(switchMap( ({id}) => this.heroeService.deleteHeroe(id)
+    .pipe(switchMap( ({id}) =>  this.heroeService.deleteHeroe(id)
 
     ))
     
@@ -84,6 +88,12 @@ export class AddComponent implements OnInit {
     {  this.router.navigate(['/heroes'])
       console.log(resp)
       })
+  }
+
+  showSnackBar(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 2500
+    })
   }
 
 }

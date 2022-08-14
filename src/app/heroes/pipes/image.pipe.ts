@@ -1,14 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Heroe } from '../interfaces/heroes.interface';
 
+//false pipe will process on a change detection rather than a change in argument. In this case the Heroe argument is the same.
 @Pipe({
-  name: 'image'
+  name: 'image',
+  //pure: false
 })
 export class ImagePipe implements PipeTransform {
 
   transform(heroe: Heroe): string {
 
-    console.log(heroe.id, "and", heroe.alt_img)
+    console.log('Pipe image has processed')
 
     if(!heroe.id && heroe.alt_img==='') {
       return 'assets/no-image.png'
