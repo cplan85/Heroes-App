@@ -8,7 +8,20 @@ export class ImagePipe implements PipeTransform {
 
   transform(heroe: Heroe): string {
 
-   return `assets/heroes/${heroe.id}.jpg`
+    console.log(heroe.id, "and", heroe.alt_img)
+
+    if(!heroe.id && heroe.alt_img==='') {
+      return 'assets/no-image.png'
+      
+    } else if (heroe.alt_img) {
+      return heroe.alt_img
+    } else if (heroe.id && heroe.alt_img ==='') {
+      return 'assets/no-image.png'
+    }
+    
+    else {
+      return `assets/heroes/${heroe.id}.jpg`
+    }
   }
 
 }

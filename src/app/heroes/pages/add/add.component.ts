@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HeroesService } from './../../services/heroes.service';
 import { Component, OnInit } from '@angular/core';
 import { Heroe } from '../../interfaces/heroes.interface';
@@ -33,9 +33,14 @@ export class AddComponent implements OnInit {
   }
 
   constructor(private heroeService: HeroesService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
+
+    if(!this.router.url.includes('edit')) {
+      return;
+    }
 
     this.activatedRoute.params
     .pipe(switchMap( ({id}) => this.heroeService.getHeroe(id)
@@ -46,14 +51,39 @@ export class AddComponent implements OnInit {
   }
 
   save(): void {
+    console.log(this.hero.id, "from add component")
     if(this.hero.superhero.trim().length === 0) {
       return;
     }
-    else {
-      this.heroeService.addHeroe(this.hero).subscribe(resp => {
-        console.log('Response', resp)
+   
+    if(this.hero.id) {
+      this.heroeService.editHeroe(this.hero, this.hero.id).subscribe(resp=> {
+        console.log('Updated',resp)
       })
+    } else {
+
+       this.heroeService.addHeroe(this.hero).subscribe(hero => {
+         console.log('Response', hero)
+         this.router.navigate(['/heroes/edit', hero.id])
+       })
+
     }
+   
+    
+  }
+
+  deleteHero():void {
+
+    this.activatedRoute.params
+    .pipe(switchMap( ({id}) => this.heroeService.deleteHeroe(id)
+
+    ))
+    
+    .subscribe(resp => 
+      
+    {  this.router.navigate(['/heroes'])
+      console.log(resp)
+      })
   }
 
 }
