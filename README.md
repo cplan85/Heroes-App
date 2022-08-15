@@ -23,6 +23,9 @@ I utilized [Switchmap](https://www.learnrxjs.io/learn-rxjs/operators/transformat
 Environment Variables:
 Instead of writing out a full string for the http call, the localhost is indicated in the environment, while a product variable is to be included for production.
 
+CanLoad and CanActivate Authorization Guards:
+This app has both CanLoad and CanActivate implemented to protect the heroes Route. I learned that CanLoad functions exactly when the application structure is implementing lazyLoading of modules. Once a module is loaded within the app, CanActivate must be used to guard against revisting the restricted page.
+
 
 
 ---
