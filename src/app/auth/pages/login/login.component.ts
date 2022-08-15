@@ -23,4 +23,11 @@ export class LoginComponent {
     })
   }
 
+  enterWithoutLogin(){
+    this.authService.logout();
+    this.router.navigate(['/heroes']);
+  }
+
+
+
 }
