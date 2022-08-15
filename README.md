@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
+### Built With
+
+Angular and Angular Materials comprise the front-end UI Components. RxJS is used for the authentication observables. Typescript is the base language for Angular.
+
+* [![Angular][Angular.io]][Angular-url]
+* [![Material][Angular.material]][Material-url]
+* ![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge&logo=reactivex&logoColor=white)
+* ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 ## :mortar_board: **What did I learn from this project**
 
 In this project I learned how to <b>lazy load modules</b> by modifying the main App router and creating a folder structure where each section contains its own Module to be exported. For example, there is an Authorization section, that contains a Login and Register page. Once a user go to a link of "auth/" this will load that module containing both pages.
@@ -53,3 +68,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+
+[Angular.material]: https://img.shields.io/badge/Material-9C27B0?style=for-the-badge&logo=angular&logoColor=white
+[Material-url]: https://material.angular.io/
+
